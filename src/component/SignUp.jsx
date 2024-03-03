@@ -11,9 +11,18 @@ function SiginUp() {
     const [passwordConfir, setasswordConfir] = useState("");
     const [error, setError] = useState(false)
 
+    const [flag, setFlag] = useState(true)
+
     function handelSubmit(e) {
         e.preventDefault();
         setError(true)
+        if (name === "" || password.length < 8 || passwordConfir !== password) {
+            setFlag(false)
+        }
+        if (flag)
+        {
+            
+        }
     }
     return (
         <>
