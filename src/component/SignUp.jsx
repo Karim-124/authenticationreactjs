@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -19,9 +20,13 @@ function SiginUp() {
         if (name === "" || password.length < 8 || passwordConfir !== password) {
             setFlag(false)
         }
-        if (flag)
-        {
-            
+        if (flag) {
+            let res = axios.post("http://127.0.0.1:8000/api/register", {
+                name: name,
+                email, email,
+                password: password,
+                password_confirmation: passwordConfir
+            }).then(t => console.log(t))
         }
     }
     return (
