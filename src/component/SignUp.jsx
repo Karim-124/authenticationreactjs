@@ -74,7 +74,7 @@ function SiginUp() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        {password.length < 8 && error && <p>password should at least 8 characters</p>}
+                        {password.length < 8 && error && <p className="text-red-700 my-1">password should at least 8 characters</p>}
                     </div>
                     <div className="mb-6">
                         <label
