@@ -37,7 +37,6 @@ function SiginUp() {
                             class="rounded bg-white border border-sky-300 block w-full text-sm p-2.5"
                             placeholder="Enter your Name"
                             value={name}
-                            required
                             onChange={(e) => setName(e.target.value)}
                         />
                     </div>
