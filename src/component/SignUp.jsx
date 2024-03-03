@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function handelSubmit(e) {
-    e.preventDefault();
-}
 
 
 function SiginUp() {
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfir, setasswordConfir] = useState("");
-    
-    console.log(name);
+    const [error, setError] = useState(false)
+
+    function handelSubmit(e) {
+        e.preventDefault();
+        setError(true)
+    }
     return (
         <>
             <div className="flex justify-center items-center h-screen m-5 md:m-0">
@@ -72,7 +74,7 @@ function SiginUp() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        {password.length < 8 && <p>password should at least 8 characters</p>}
+                        {password.length < 8 && error && <p>password should at least 8 characters</p>}
                     </div>
                     <div className="mb-6">
                         <label
