@@ -39,6 +39,7 @@ function SiginUp() {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
+                        {name == "" && error && <p className="text-red-700 my-1">password is required</p>}
                     </div>
                     <div className="mb-4">
                         <label
