@@ -11,6 +11,7 @@ function SiginUp() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfir, setasswordConfir] = useState("");
+    
     console.log(name);
     return (
         <>
@@ -71,6 +72,7 @@ function SiginUp() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
+                        {password.length < 8 && <p>password should at least 8 characters</p>}
                     </div>
                     <div className="mb-6">
                         <label
