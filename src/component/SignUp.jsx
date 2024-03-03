@@ -1,12 +1,16 @@
 import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+function handelSubmit(e) {
+    e.preventDefault();
+}
+
 function SiginUp() {
 
     return (
         <>
             <div className="flex justify-center items-center h-screen m-5 md:m-0">
-                <form className="w-full max-w-md bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4" >
+                <form onSubmit={handelSubmit} className="w-full max-w-md bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4" >
                     <h2 className="text-center text-3xl font-bold mb-4">Sign Up</h2>
 
                     <div className="mb-4">
