@@ -92,6 +92,7 @@ function SiginUp() {
                             value={passwordConfir}
                             onChange={(e) => setasswordConfir(e.target.value)}
                         />
+                        {passwordConfir !== password && error && <p className=" text-red-700 my-1">password doesn,t match</p>}
                     </div>
                     <button
                         type="submit"
