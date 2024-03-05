@@ -13,7 +13,7 @@ function SiginUp() {
     const [error, setError] = useState(false)
 
 
-    function handelSubmit(e) {
+    async function handelSubmit(e) {
         let flag = true;
         e.preventDefault();
         setError(true)
@@ -21,14 +21,20 @@ function SiginUp() {
             flag = false;;
         }
         else flag = true;
-        if (flag) {
-            let res = axios.post("http://127.0.0.1:8000/api/register", {
-                name: name,
-                email, email,
-                password: password,
-                password_confirmation: passwordConfir
-            }).then(t => console.log(t))
-        }
+        try {
+            if (flag) {
+                let res = await axios.post("http://127.0.0.1:8000/api/register", {
+                    name: name,
+                    email, email,
+                    password: password,
+                    password_confirmation: passwordConfir
+                })
+            }
+            catch (err) {
+                console.log(err);
+            }
+         }
+       
     }
     return (
         <>
