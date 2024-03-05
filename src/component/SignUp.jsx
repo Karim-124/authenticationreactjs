@@ -11,30 +11,35 @@ function SiginUp() {
     const [password, setPassword] = useState("");
     const [passwordConfir, setasswordConfir] = useState("");
     const [error, setError] = useState(false)
+    const [emailError, setEmailError] = useState("")
 
 
     async function handelSubmit(e) {
         let flag = true;
         e.preventDefault();
-        setError(true)
+        setError(true);
+
         if (name === "" || password.length < 8 || passwordConfir !== password) {
-            flag = false;;
+            flag = false;
+        } else {
+            flag = true;
         }
-        else flag = true;
+
         try {
             if (flag) {
                 let res = await axios.post("http://127.0.0.1:8000/api/register", {
                     name: name,
-                    email, email,
+                    email: email,
                     password: password,
                     password_confirmation: passwordConfir
-                })
+                });
+                // Handle the response
+                console.log(res.data);
             }
-            catch (err) {
-                console.log(err);
-            }
-         }
-       
+        } catch (err) {
+            // Handle the error
+            setEmailError(err.response.status)
+        }
     }
     return (
         <>
@@ -78,6 +83,7 @@ function SiginUp() {
                             required
                             onChange={(e) => setEmail(e.target.value)}
                         />
+                        {error && emailError && 422 && <p className=" text-red-700">the email is been token before.</p>}
                     </div>
                     <div className="mb-4">
                         <label
