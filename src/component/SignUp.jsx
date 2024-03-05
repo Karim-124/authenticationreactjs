@@ -20,7 +20,6 @@ function SiginUp() {
       } else {
          flag = true;
       }
-
       try {
          if (flag) {
             let res = await axios.post("http://127.0.0.1:8000/api/register", {
@@ -29,8 +28,6 @@ function SiginUp() {
                password: password,
                password_confirmation: passwordConfir,
             });
-            // Handle the response
-            console.log(res.data);
          }
       } catch (err) {
          // Handle the error
