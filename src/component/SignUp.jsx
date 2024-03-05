@@ -12,15 +12,16 @@ function SiginUp() {
     const [passwordConfir, setasswordConfir] = useState("");
     const [error, setError] = useState(false)
 
-    const [flag, setFlag] = useState(false)
 
     function handelSubmit(e) {
+        let flag = true;
         e.preventDefault();
         setError(true)
         if (name === "" || password.length < 8 || passwordConfir !== password) {
-            setFlag(false)
+            // setFlag(false)
+            flag = false;;
         }
-        else setFlag(true)
+        else flag = true;
         if (flag) {
             let res = axios.post("http://127.0.0.1:8000/api/register", {
                 name: name,
