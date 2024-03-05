@@ -18,7 +18,6 @@ function SiginUp() {
         e.preventDefault();
         setError(true)
         if (name === "" || password.length < 8 || passwordConfir !== password) {
-            // setFlag(false)
             flag = false;;
         }
         else flag = true;
