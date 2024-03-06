@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import NavbarApp from "./NavbarApp";
 
 function SiginUp() {
    const [name, setName] = useState("");
@@ -36,6 +37,7 @@ function SiginUp() {
    }
    return (
       <>
+         <NavbarApp/>
          <div className="flex justify-center items-center h-screen m-5 md:m-0">
             <form
                onSubmit={handelSubmit}
