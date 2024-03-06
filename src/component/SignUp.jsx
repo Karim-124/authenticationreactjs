@@ -79,7 +79,7 @@ function SiginUp() {
                      onChange={(e) => setEmail(e.target.value)}
                   />
                   {error && emailError && 422 && (
-                     <p className=" text-red-700">the email is been token before.</p>
+                     <p className=" text-red-700 my-1">the email is been token before.</p>
                   )}
                </div>
                <div className="mb-4">
