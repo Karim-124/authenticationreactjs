@@ -1,8 +1,12 @@
 import React from 'react'
+import NavbarApp from './NavbarApp'
 
 function Hompage() {
   return (
-    <div>Hompage</div>
+      <>
+          <NavbarApp/>
+          <div>Hompage</div>
+      </>
   )
 }
 
