@@ -7,7 +7,7 @@ function Dashbord() {
         <>
             <TopBar />
             <div className='flex justify-between'>
-                <div className='bg-gray-500 w-1/5 border-r-2 h-svh p-10'>
+                <div className='bg-gray-900 w-1/5 border-r-2 h-svh p-10'>
                     <SideBar />
                 </div>
                 <div className=''>Test</div>
