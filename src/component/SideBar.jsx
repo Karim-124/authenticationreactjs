@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function SideBar() {
     return (
-        <div>SideBar</div>
+        <Link to='/dashboard/users'>Users</Link>
     )
 }
 
