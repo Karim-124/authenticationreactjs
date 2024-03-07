@@ -25,8 +25,7 @@ function Login() {
                     email: email,
                     password: password,
                 });
-                if (res.status == 200)
-                {
+                if (res.status == 200) {
                     window.localStorage.setItem("email", email);
                     window.location.pathname = "/";
                 }
@@ -44,7 +43,7 @@ function Login() {
                     onSubmit={handelSubmit}
                     className="w-full max-w-md bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4"
                 >
-                    <h2 className="text-center text-3xl font-bold mb-4">Sign Up</h2>
+                    <h2 className="text-center text-3xl font-bold mb-4">Login</h2>
                     <div className="mb-4">
                         <label
                             htmlFor="email"
