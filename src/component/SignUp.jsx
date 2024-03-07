@@ -29,6 +29,9 @@ function SiginUp() {
                password: password,
                password_confirmation: passwordConfir,
             });
+            if (res.status == 200) {
+               window.location.pathname="/"
+            }
          }
       } catch (err) {
          // Handle the error
@@ -37,7 +40,7 @@ function SiginUp() {
    }
    return (
       <>
-         <NavbarApp/>
+         <NavbarApp />
          <div className="flex justify-center items-center h-screen m-5 md:m-0">
             <form
                onSubmit={handelSubmit}
