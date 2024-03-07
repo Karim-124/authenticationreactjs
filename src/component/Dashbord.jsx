@@ -6,8 +6,8 @@ function Dashbord() {
     return (
         <>
             <TopBar />
-            <div className='flex justify-around'>
-                <div className=''>
+            <div className='flex justify-between'>
+                <div className='w-1/5 border-r-2 h-svh p-10'>
                     <SideBar />
                 </div>
                 <div>Test</div>
