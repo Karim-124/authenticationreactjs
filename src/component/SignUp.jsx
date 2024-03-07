@@ -29,8 +29,9 @@ function SiginUp() {
                password: password,
                password_confirmation: passwordConfir,
             });
+            // save email in loaclStorage if user login a lot of times and go to homepage if he make register correctely 
             if (res.status == 200) {
-               window.localStorage.setItem("email",email)
+               window.localStorage.setItem("email", email)
                window.location.pathname = "/"
             }
          }
