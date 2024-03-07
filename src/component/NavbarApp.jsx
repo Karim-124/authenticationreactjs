@@ -11,6 +11,7 @@ function NavbarApp() {
     function handleLogout()
     {
         window.localStorage.removeItem("email");
+        window.location.pathname = "/";
     }
 
     return (
