@@ -8,6 +8,11 @@ function NavbarApp() {
         setIsOpen(!isOpen);
     };
 
+    function handleLogout()
+    {
+        window.localStorage.removeItem("email");
+    }
+
     return (
         <nav className="bg-white border-gray-200 dark:bg-gray-900 p-2">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
