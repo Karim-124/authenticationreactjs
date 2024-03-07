@@ -30,7 +30,8 @@ function SiginUp() {
                password_confirmation: passwordConfir,
             });
             if (res.status == 200) {
-               window.location.pathname="/"
+               window.localStorage.setItem("email",email)
+               window.location.pathname = "/"
             }
          }
       } catch (err) {
