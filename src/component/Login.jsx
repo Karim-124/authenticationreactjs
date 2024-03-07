@@ -25,6 +25,11 @@ function Login() {
                     email: email,
                     password: password,
                 });
+                if (res.status == 200)
+                {
+                    window.localStorage.setItem("email", email);
+                    window.location.pathname = "/";
+                }
             }
         } catch (err) {
             // Handle the error
