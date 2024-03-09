@@ -7,17 +7,18 @@ function Users() {
       .then((res) => res.json())
       .then((data) => setUsers(data))
   }, [])
-  const showData = users.map((user) => {
+  const showData = users.map((user, index) => {
     return (
       <>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+        <tr key={index} class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
           <th
             scope="row"
             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
           >
-            Apple MacBook Pro 17"
+            {index}
           </th>
-          <td class="px-6 py-4">Silver</td>
+          <td class="px-6 py-4">{user.name}</td>
+          <td class="px-6 py-4">{user.email}</td>
           <td class="px-6 py-4">Laptop</td>
           <td class="px-6 py-4">$2999</td>
         </tr></>
@@ -30,10 +31,12 @@ function Users() {
           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" class="px-6 py-3">
-                Product name
+                Users id
+              </th><th scope="col" class="px-6 py-3">
+                Users Name
               </th>
               <th scope="col" class="px-6 py-3">
-                Color
+                Email
               </th>
               <th scope="col" class="px-6 py-3">
                 Category
@@ -44,8 +47,8 @@ function Users() {
             </tr>
           </thead>
           <tbody>
-        
-           {showData} 
+
+            {showData}
           </tbody>
         </table>
       </div>
