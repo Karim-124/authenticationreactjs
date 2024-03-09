@@ -5,6 +5,7 @@ import Login from './component/Login';
 import Hompage from './component/Hompage';
 import Dashbord from './component/Dashbord';
 import Users from './component/Users';
+import UpdateUser from './component/UpdateUser';
 
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Hompage />} />
         <Route path='/dashboard' element={<Dashbord />} >
-          <Route path='users' element={<Users />} />
+          <Route exact path='users' element={<Users />} />
+          <Route path="users/:id" element={<UpdateUser />} />
+
         </Route>
         <Route path='/signup' element={<SiginUp />} />
         <Route path='/login' element={<Login />} />
