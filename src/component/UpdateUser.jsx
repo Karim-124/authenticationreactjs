@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function UpdateUser() {
@@ -38,6 +38,13 @@ function UpdateUser() {
          setEmailError(err.response.status);
       }
    }
+   const id = window.location.pathname.split("/").slice(-1);
+   useEffect(() => {
+      fetch(`http://127.0.0.1:8000/api/user/showbyid/${id}`)
+         .then((res) => res.json())
+         .then((data) => console.log(data));
+   }, []);
+
    return (
       <>
          <div className="flex justify-center items-center h-screen m-5 md:m-0">
