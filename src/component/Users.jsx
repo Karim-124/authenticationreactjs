@@ -41,7 +41,7 @@ function Users() {
         <td className="px-6 py-4 text-center">
           <i
             onClick={() => deleteUser(user.id)}
-            class="fa-solid fa-trash text-2xl text-red-400 cursor-pointer"
+            className="fa-solid fa-trash text-2xl text-red-400 cursor-pointer"
           ></i>
           <Link to={`${user.id}`}>
             <i className="fa-solid fa-pen-to-square text-2xl ml-2 hover:text-sky-400 cursor-pointer"></i>

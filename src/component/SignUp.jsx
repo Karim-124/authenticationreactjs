@@ -60,7 +60,7 @@ function SiginUp() {
                   <input
                      type="text"
                      id="name"
-                     class="rounded bg-white border border-sky-300 block w-full text-sm p-2.5"
+                     className="rounded bg-white border border-sky-300 block w-full text-sm p-2.5"
                      placeholder="Enter your Name"
                      value={name}
                      onChange={(e) => setName(e.target.value)}
@@ -79,7 +79,7 @@ function SiginUp() {
                   <input
                      type="email"
                      id="email"
-                     class="rounded bg-white border border-sky-300 block w-full text-sm p-2.5"
+                     className="rounded bg-white border border-sky-300 block w-full text-sm p-2.5"
                      placeholder="Enter your email"
                      value={email}
                      required
@@ -99,7 +99,7 @@ function SiginUp() {
                   <input
                      type="password"
                      id="password"
-                     class="rounded bg-white border border-sky-300 block w-full text-sm p-2.5"
+                     className="rounded bg-white border border-sky-300 block w-full text-sm p-2.5"
                      placeholder="Enter your password"
                      required
                      value={password}
@@ -121,7 +121,7 @@ function SiginUp() {
                   <input
                      type="password"
                      id="confirm-password"
-                     class="rounded bg-white border border-sky-300 	 block w-full text-sm p-2.5"
+                     className="rounded bg-white border border-sky-300 	 block w-full text-sm p-2.5"
                      placeholder="Confirm your password"
                      required
                      value={passwordConfir}

@@ -54,7 +54,7 @@ function Login() {
                         <input
                             type="email"
                             id="email"
-                            class="rounded bg-white border border-sky-300 block w-full text-sm p-2.5"
+                            className="rounded bg-white border border-sky-300 block w-full text-sm p-2.5"
                             placeholder="Enter your email"
                             value={email}
                             required
@@ -74,7 +74,7 @@ function Login() {
                         <input
                             type="password"
                             id="password"
-                            class="rounded bg-white border border-sky-300 block w-full text-sm p-2.5"
+                            className="rounded bg-white border border-sky-300 block w-full text-sm p-2.5"
                             placeholder="Enter your password"
                             required
                             value={password}
