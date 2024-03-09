@@ -9,7 +9,6 @@ function UpdateUser() {
    const [password, setPassword] = useState("");
    const [passwordConfir, setasswordConfir] = useState("");
    const [error, setError] = useState(false);
-   const [emailError, setEmailError] = useState("");
    async function handelSubmit(e) {
       let flag = true;
       e.preventDefault();
@@ -22,7 +21,7 @@ function UpdateUser() {
       }
       try {
          if (flag) {
-            let res = await axios.post("http://127.0.0.1:8000/api/register", {
+            let res = await axios.post(`http://127.0.0.1:8000/api/user/update/${id}`, {
                name: name,
                email: email,
                password: password,
@@ -31,12 +30,12 @@ function UpdateUser() {
             // save email in loaclStorage if user login a lot of times and go to homepage if he make register correctely
             if (res.status == 200) {
                window.localStorage.setItem("email", email);
-               window.location.pathname = "/";
+               window.location.pathname = "/dashboard/users";
             }
          }
       } catch (err) {
          // Handle the error
-         setEmailError(err.response.status);
+         console.log(err);
       }
    }
    const id = window.location.pathname.split("/").slice(-1);
@@ -95,11 +94,7 @@ function UpdateUser() {
                      required
                      onChange={(e) => setEmail(e.target.value)}
                   />
-                  {error && emailError && 422 && (
-                     <p className=" text-red-700 my-1">
-                        the email is been token before.
-                     </p>
-                  )}
+
                </div>
                <div className="mb-4">
                   <label
