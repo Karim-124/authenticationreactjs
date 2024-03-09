@@ -25,30 +25,30 @@ function Users() {
   }
   const showData = users.map((user, index) => {
     return (
-      <>
-        <tr
-          key={index}
-          className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+
+      <tr
+        key={index}
+        className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+      >
+        <th
+          scope="row"
+          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center"
         >
-          <th
-            scope="row"
-            className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center"
-          >
-            {index}
-          </th>
-          <td className="px-6 py-4 text-center">{user.name}</td>
-          <td className="px-6 py-4 text-center">{user.email}</td>
-          <td className="px-6 py-4 text-center">
-            <i
-              onClick={() => deleteUser(user.id)}
-              class="fa-solid fa-trash text-2xl text-red-400 cursor-pointer"
-            ></i>
-            <Link to={`${user.id}`}>
-              <i className="fa-solid fa-pen-to-square text-2xl ml-2 hover:text-sky-400 cursor-pointer"></i>
-            </Link>
-          </td>
-        </tr>
-      </>
+          {index}
+        </th>
+        <td className="px-6 py-4 text-center">{user.name}</td>
+        <td className="px-6 py-4 text-center">{user.email}</td>
+        <td className="px-6 py-4 text-center">
+          <i
+            onClick={() => deleteUser(user.id)}
+            class="fa-solid fa-trash text-2xl text-red-400 cursor-pointer"
+          ></i>
+          <Link to={`${user.id}`}>
+            <i className="fa-solid fa-pen-to-square text-2xl ml-2 hover:text-sky-400 cursor-pointer"></i>
+          </Link>
+        </td>
+      </tr>
+
     );
   });
 
