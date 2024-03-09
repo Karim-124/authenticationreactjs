@@ -9,11 +9,11 @@ function Users() {
     fetch("http://127.0.0.1:8000/api/user/show")
       .then((res) => res.json())
       .then((data) => setUsers(data));
-  }, []);
+  }, [useEffectError]);
 
   async function deleteUser(id) {
     try {
-      const res = axios.delete(`http://127.0.0.1:8000/api/user/delete/${id}`);
+      const res = await axios.delete(`http://127.0.0.1:8000/api/user/delete/${id}`);
       if (res.status === 200) {
         setRun((prev) => prev + 1);
       }
