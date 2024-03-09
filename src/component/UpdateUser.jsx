@@ -42,7 +42,10 @@ function UpdateUser() {
    useEffect(() => {
       fetch(`http://127.0.0.1:8000/api/user/showbyid/${id}`)
          .then((res) => res.json())
-         .then((data) => console.log(data));
+         .then((data) => {
+            setName(data[0].name)
+            setEmail(data[0].email)
+         });
    }, []);
 
    return (
