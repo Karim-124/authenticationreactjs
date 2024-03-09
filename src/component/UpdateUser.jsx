@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../component/all.min.css";
 
 function UpdateUser() {
    const [name, setName] = useState("");
@@ -45,7 +46,9 @@ function UpdateUser() {
          .then((data) => {
             setName(data[0].name)
             setEmail(data[0].email)
+            console.log(data);
          });
+
    }, []);
 
    return (
