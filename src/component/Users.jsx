@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "../component/all.min.css";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 function Users() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/user/show")
       .then((res) => res.json())
       .then((data) => setUsers(data));
-  }, [users]);
+  }, []);
 
   function deleteUser(id) {
     axios.delete(`http://127.0.0.1:8000/api/user/delete/${id}`);
-    console.log("data");
   }
   const showData = users.map((user, index) => {
     return (
@@ -33,7 +33,9 @@ function Users() {
               onClick={() => deleteUser(user.id)}
               class="fa-solid fa-trash text-2xl text-red-400 cursor-pointer"
             ></i>
-            <i className="fa-solid fa-pen-to-square text-2xl ml-2 hover:text-sky-400 cursor-pointer"></i>
+            <Link to={`${user.id}`}>
+              <i className="fa-solid fa-pen-to-square text-2xl ml-2 hover:text-sky-400 cursor-pointer"></i>
+            </Link>
           </td>
         </tr>
       </>
