@@ -4,14 +4,24 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 function Users() {
   const [users, setUsers] = useState([]);
+  const [useEffectError, setRun] = useState(0);
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/user/show")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
 
-  function deleteUser(id) {
-    axios.delete(`http://127.0.0.1:8000/api/user/delete/${id}`);
+  async function deleteUser(id) {
+    try {
+      const res = axios.delete(`http://127.0.0.1:8000/api/user/delete/${id}`);
+      if (res.status === 200) {
+        setRun((prev) => prev + 1);
+      }
+    }
+    catch {
+      console.log("none");
+    }
+
   }
   const showData = users.map((user, index) => {
     return (
